@@ -19,7 +19,7 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+// import UsersController from 'App/Controllers/Http/UsersController'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
+Route.get('/user', 'UsersController.index')
+Route.get('/user/:id', 'UsersController.user')
