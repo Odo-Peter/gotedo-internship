@@ -19,7 +19,10 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-// import UsersController from 'App/Controllers/Http/UsersController'
 
 Route.get('/user', 'UsersController.index')
-Route.get('/user/:id', 'UsersController.user')
+Route.get('/user/:id', 'UsersController.show')
+Route.post('/user', 'UsersController.store')
+
+Route.get('/request', 'SupportRequestsController.index')
+Route.post('/request', 'SupportRequestsController.store')
