@@ -18,7 +18,7 @@ export default class SupportRequestsController {
         email: schema.string({ trim: true }),
         title: schema.string({ trim: true }),
         fullMessage: schema.string({ trim: true }),
-        userFile: schema.file({
+        file: schema.file({
           size: '3mb',
           extnames: ['jpg', 'png', 'jpeg', 'pdf', 'docx', 'doc'],
         }),

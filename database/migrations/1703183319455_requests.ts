@@ -1,13 +1,18 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class extends BaseSchema {
-  protected tableName = 'users'
+  protected tableName = 'support_requests'
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('email').notNullable()
-      table.string('full_name')
+      table.string('firstname')
+      table.string('lastname')
+      table.integer('user_id').unsigned().references('id').inTable('users')
+      table.string('email', 255).notNullable()
+      table.string('message_title')
+      table.string('full_message')
+      table.string('user_file')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

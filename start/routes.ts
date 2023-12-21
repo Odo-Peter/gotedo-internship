@@ -20,6 +20,10 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+Route.get('/', () => {
+  return { message: 'Hello Gotedo' }
+})
+
 Route.get('/user', 'UsersController.index')
 Route.get('/user/:id', 'UsersController.show')
 Route.post('/user', 'UsersController.store')
